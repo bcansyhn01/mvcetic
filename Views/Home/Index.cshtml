@@ -1,0 +1,29 @@
+﻿@using BCS.MvcWeb.Entity;
+@model IEnumerable<BCS.MvcWeb.Models.ProductModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="jumbotron">
+    <div class="container">
+
+        <h1 class="display-3">BCS Teknoloji</h1>
+        <p class="lead">Teknolojinin Yeni Adresi -BCS-</p>
+        <hr class="my-4">
+        <p>Keyifli Alışverişler Dileriz -BCS-</p><p class="lead">
+            <a class="btn btn-primary btn-lg" href="#" role="button">DAHA FAZLA</a>
+        </p>
+    </div>
+</div>
+
+<div class="container pb-5">
+      @Html.Partial("_ProductList",Model)
+</div>
+
+
+
+
+
+
+
+

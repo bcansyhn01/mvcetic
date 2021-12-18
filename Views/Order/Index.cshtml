@@ -1,0 +1,40 @@
+﻿@model IEnumerable<BCS.MvcWeb.Models.AdminOrderModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container pb-5">
+
+    <h2>Siparişler</h2>
+    <hr />
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Sipariş Numarası</th>
+                <th>Sipariş Tarihi</th>
+                <th>Sipariş Durumu</th>
+                <th>Toplam Fiyat</th>
+                <th>Ürün Sayısı</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>@item.Id</th>
+                <th>@item.OrderNumber</th>
+                <th>@item.OrderDate</th>
+                <th>@item.OrderState</th>
+                <th>@item.Total</th>
+                <th>@item.Count</th>
+                <th>
+                    @Html.ActionLink("Detaylar", "Details", new { id = @item.Id }, new { @class = "btn btn-primary btn-sm" })
+                </th>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
